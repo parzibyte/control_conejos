@@ -1,0 +1,6 @@
+CREATE TABLE conejos(
+    id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    descripcion VARCHAR(255) NOT NULL,
+    genero CHAR NOT NULL,
+    fecha_nacimiento VARCHAR(10) NOT NULL
+);

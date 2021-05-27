@@ -1,0 +1,15 @@
+{
+    "name": "parzibyte/conejos",
+    "authors": [
+        {
+            "name": "Luis Cabrera Benito",
+            "email": "parzibyte@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Parzibyte\\": "Parzibyte/"
+        }
+    },
+    "require": {}
+}
