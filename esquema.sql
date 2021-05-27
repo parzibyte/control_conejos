@@ -4,3 +4,12 @@ CREATE TABLE conejos(
     genero CHAR NOT NULL,
     fecha_nacimiento VARCHAR(10) NOT NULL
 );
+
+CREATE TABLE cubricion_conejos(
+    id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_conejo BIGINT UNSIGNED NOT NULL,
+    fecha_inicio VARCHAR(255) NOT NULL,
+    fecha_fin VARCHAR(255),
+    exitosa BOOLEAN DEFAULT 0,
+    FOREIGN KEY (id_conejo) REFERENCES conejos(id) ON UPDATE CASCADE ON DELETE CASCADE
+);

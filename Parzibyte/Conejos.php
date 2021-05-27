@@ -18,4 +18,13 @@ class Conejos
         $sentencia = $bd->query("SELECT id, descripcion, genero, fecha_nacimiento FROM conejos");
         return $sentencia->fetchAll();
     }
+
+    static function uno($id)
+    {
+
+        $bd = BD::obtener();
+        $sentencia = $bd->prepare("SELECT id, descripcion, genero, fecha_nacimiento FROM conejos WHERE id = ?");
+        $sentencia->execute([$id]);
+        return $sentencia->fetchObject();
+    }
 }
