@@ -44,7 +44,7 @@ $conejos = Conejos::obtener();
                                 <a href="cubricion.php?id=<?php echo $conejo->id ?>" class="btn btn-success">Cubrición</a>
                             <?php } ?>
                             <a href="#" class="btn btn-warning">Editar</a>
-                            <a href="#" class="btn btn-danger">Eliminar</a>
+                            <a href="eliminar_conejo.php?id=<?php echo $conejo->id ?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>

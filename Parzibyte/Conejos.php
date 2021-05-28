@@ -27,4 +27,11 @@ class Conejos
         $sentencia->execute([$id]);
         return $sentencia->fetchObject();
     }
+
+    static function eliminar($id)
+    {
+        $bd = BD::obtener();
+        $sentencia = $bd->prepare("DELETE FROM conejos WHERE id = ?");
+        return $sentencia->execute([$id]);
+    }
 }
