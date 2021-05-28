@@ -28,7 +28,13 @@ $conejos = Conejos::obtener();
                     <tr>
                         <td> <?php echo $conejo->id ?> </td>
                         <td> <?php echo $conejo->descripcion ?> </td>
-                        <td> <?php echo $conejo->genero ?> </td>
+                        <td>
+                            <?php if ($conejo->genero === PeriodosConejos::GENERO_HEMBRA) { ?>
+                                <i class="bi-gender-female" style="font-size: 2rem; color:pink;"></i>
+                            <?php } else { ?>
+                                <i class="bi-gender-male" style="font-size: 2rem; color:blue;"></i>
+                            <?php } ?>
+                        </td>
                         <td> <?php echo Fechas::diasAAniosMesesYDias(Fechas::diasTranscurridosHastaHoy($conejo->fecha_nacimiento)) ?> </td>
                         <td>
                             <ul class="list-group list-group-flush">
@@ -40,7 +46,7 @@ $conejos = Conejos::obtener();
                             </ul>
                         </td>
                         <td>
-                            <?php if (PeriodosConejos::puedeReproducirse(Fechas::diasTranscurridosHastaHoy($conejo->fecha_nacimiento), $conejo->genero)) { ?>
+                            <?php if ($conejo->genero === PeriodosConejos::GENERO_HEMBRA && PeriodosConejos::puedeReproducirse(Fechas::diasTranscurridosHastaHoy($conejo->fecha_nacimiento), $conejo->genero)) { ?>
                                 <a href="cubricion.php?id=<?php echo $conejo->id ?>" class="btn btn-success">Cubrición</a>
                             <?php } ?>
                             <a href="#" class="btn btn-warning">Editar</a>
