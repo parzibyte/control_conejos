@@ -33,7 +33,7 @@ $conejos = Conejos::obtener();
                         <td>
                             <ul class="list-group list-group-flush">
                                 <?php
-                                $informacion = PeriodosConejos::obtenerInformacion($conejo->fecha_nacimiento, $conejo->genero);
+                                $informacion = PeriodosConejos::obtenerInformacion($conejo->id, $conejo->fecha_nacimiento, $conejo->genero);
                                 foreach ($informacion as $punto) { ?>
                                     <li class="list-group-item"><?php echo $punto ?></li>
                                 <?php } ?>

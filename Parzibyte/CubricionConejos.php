@@ -30,4 +30,5 @@ class CubricionConejos
         $sentencia = $bd->prepare("UPDATE cubricion_conejos SET fecha_fin = ?, exitosa = ? WHERE id = ?");
         return $sentencia->execute([$fecha, $exitosa, $id]);
     }
+
 }
