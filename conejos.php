@@ -47,10 +47,16 @@ $conejos = Conejos::obtener();
                         </td>
                         <td>
                             <?php if ($conejo->genero === PeriodosConejos::GENERO_HEMBRA && PeriodosConejos::puedeReproducirse(Fechas::diasTranscurridosHastaHoy($conejo->fecha_nacimiento), $conejo->genero)) { ?>
-                                <a href="cubricion.php?id=<?php echo $conejo->id ?>" class="btn btn-success">Cubrición</a>
+                                <a title="Cubrición y gestación" href="cubricion.php?id=<?php echo $conejo->id ?>" class="btn btn-success mb-1">
+                                    <i class="bi-heart"></i>
+                                </a>
                             <?php } ?>
-                            <a href="formulario_editar_conejo.php?id=<?php echo $conejo->id ?>" class="btn btn-warning">Editar</a>
-                            <a href="eliminar_conejo.php?id=<?php echo $conejo->id ?>" class="btn btn-danger">Eliminar</a>
+                            <a href="formulario_editar_conejo.php?id=<?php echo $conejo->id ?>" class="btn btn-warning mb-1">
+                                <i class="bi-pencil"></i>
+                            </a>
+                            <a href="eliminar_conejo.php?id=<?php echo $conejo->id ?>" class="btn btn-danger mb-1">
+                                <i class="bi-trash"></i>
+                            </a>
                         </td>
                     </tr>
                 <?php } ?>
