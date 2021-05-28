@@ -34,4 +34,11 @@ class Conejos
         $sentencia = $bd->prepare("DELETE FROM conejos WHERE id = ?");
         return $sentencia->execute([$id]);
     }
+
+    static function actualizarConejo(string $id, string $descripcion, string $genero, string $fechaNacimiento): bool
+    {
+        $bd = BD::obtener();
+        $sentencia = $bd->prepare("UPDATE conejos SET descripcion = ?, genero = ?, fecha_nacimiento = ? WHERE id = ?");
+        return $sentencia->execute([$descripcion, $genero, $fechaNacimiento, $id]);
+    }
 }
